@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FXMLMenuPrincipalController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74bcff" height="75.0" stroke="BLACK" strokeType="INSIDE" width="906.0" />
+      <Label layoutX="387.0" layoutY="14.0" text="APISUX">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Button layoutX="35.0" layoutY="236.0" mnemonicParsing="false" onAction="#clicRutas" prefHeight="82.0" prefWidth="184.0" text="Rutas">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+      <Button layoutX="242.0" layoutY="236.0" mnemonicParsing="false" onAction="#clicRutasColonia" prefHeight="82.0" prefWidth="184.0" text="Rutas por colonia">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+      <Button layoutX="463.0" layoutY="236.0" mnemonicParsing="false" onAction="#clicConsultaTuRuta" prefHeight="82.0" prefWidth="184.0" text="Consulta tu ruta">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+      <Button layoutX="670.0" layoutY="236.0" mnemonicParsing="false" onAction="#clicViajaSegura" prefHeight="82.0" prefWidth="201.0" text="Viaja segura">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

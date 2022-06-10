@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FXMLConsultaTuRutaController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74bcff" height="75.0" stroke="BLACK" strokeType="INSIDE" width="906.0" />
+      <Label layoutX="324.0" layoutY="14.0" text="Consulta tu ruta">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Label layoutX="176.0" layoutY="177.0" text="Colonia de origen:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="176.0" layoutY="276.0" text="Colonia de destino:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfColoniaOrigen" layoutX="383.0" layoutY="178.0" prefHeight="27.0" prefWidth="259.0" />
+      <TextField fx:id="tfColoniaDestino" layoutX="383.0" layoutY="277.0" prefHeight="27.0" prefWidth="259.0" />
+      <Button layoutX="418.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicConsultar" text="Consultar" />
+   </children>
+</AnchorPane>

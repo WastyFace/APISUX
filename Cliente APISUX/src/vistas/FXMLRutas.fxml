@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FXMLRutasController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74bcff" height="71.0" stroke="BLACK" strokeType="INSIDE" width="906.0" />
+      <Label layoutX="412.0" layoutY="12.0" text="Rutas">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicRuta1" prefHeight="48.0" prefWidth="135.0" text="Xocotla" textAlignment="CENTER" wrapText="true" />
+      <Label layoutX="14.0" layoutY="84.0" text="Selecciona la ruta que quieras consultar para saber su recorrido:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button layoutX="14.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicRuta2" prefHeight="48.0" prefWidth="135.0" text="Buena vista - centro - Central de abastos" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="14.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicRuta3" prefHeight="48.0" prefWidth="135.0" text="Pastoresa - Murillo Vidal - Centro" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="14.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicRuta4" prefHeight="48.0" prefWidth="135.0" text="Sauces - Ojo de Agua - Zona UV" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="14.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicRuta5" prefHeight="48.0" prefWidth="135.0" text="Campo de tiro - Crystal - Mercado" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="162.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicRuta10" prefHeight="48.0" prefWidth="135.0" text="Ignacio de la llave - Zona UV - Estación" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="162.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicRuta9" prefHeight="48.0" prefWidth="135.0" text="5 de febrero - Zona UV - Estación" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="162.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicRuta8" prefHeight="48.0" prefWidth="135.0" text="Estación - Terminal - Bolivia" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="14.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicRuta7" prefHeight="48.0" prefWidth="135.0" text="Villahermosa - Ruís Cortines" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="14.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicRuta6" prefHeight="48.0" prefWidth="135.0" text="Estación - Calvario - Zapata" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="310.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicRuta15" prefHeight="48.0" prefWidth="135.0" text="Tesorería - Ávila Camacho - SEV" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="162.0" layoutY="449.0" mnemonicParsing="false" onAction="#clicRuta14" prefHeight="48.0" prefWidth="135.0" text="Tesorería - Lázaro Cárdenas - SEV" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="162.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicRuta13" prefHeight="48.0" prefWidth="135.0" text="Lázaro Cárdenas - Ruíz Cortines" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="162.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicRuta12" prefHeight="48.0" prefWidth="135.0" text="Ávila Camacho - 20 de noviembre" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="162.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicRuta11" prefHeight="48.0" prefWidth="135.0" text="Calvario - Terminal" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="310.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicRuta20" prefHeight="48.0" prefWidth="135.0" text="FOVISSTE - IMSS" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="310.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicRuta19" prefHeight="48.0" prefWidth="135.0" text="FOVISSTE - Lerdo de Tejada" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="310.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicRuta18" prefHeight="48.0" prefWidth="135.0" text="Técnica 72 - Aguascalientes - Zona UV" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button layoutX="310.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicRuta17" prefHeight="48.0" prefWidth="135.0" text="Coapexpan - Técnica 72" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="310.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicRuta16" prefHeight="48.0" prefWidth="135.0" text="Técnica 72 - Circunvalación - Centro" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="310.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicRuta21" prefHeight="48.0" prefWidth="135.0" text="FOVISSTE - SAN BRUNO" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="459.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicRuta28" prefHeight="48.0" prefWidth="135.0" text="Mercado - Sumidero" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="459.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicRuta23" prefHeight="48.0" prefWidth="135.0" text="Luz del Barrio - Plaza Crystal" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="459.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicRuta24" prefHeight="48.0" prefWidth="135.0" text="Rancho Viejo - Xalapa" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="459.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicRuta26" prefHeight="48.0" prefWidth="135.0" text="San Andrés - Xalapa" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="459.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicRuta27" prefHeight="48.0" prefWidth="135.0" text="San Antonio - Xalapa" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="459.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicRuta22" prefHeight="48.0" prefWidth="135.0" text="Pastoresa - Mercado" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="610.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicRuta35" prefHeight="48.0" prefWidth="135.0" text="Higueras - Mercado" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="610.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicRuta30" prefHeight="48.0" prefWidth="135.0" text="Santa Rosa - Estación" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="610.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicRuta31" prefHeight="48.0" prefWidth="135.0" text="Mártires de Chicago - Mercado" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="610.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicRuta33" prefHeight="48.0" prefWidth="135.0" text="Coapexpan - Araucarias" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="610.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicRuta34" prefHeight="48.0" prefWidth="135.0" text="Coapexpan - Torre Ánimas" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="610.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicRuta29" prefHeight="48.0" prefWidth="135.0" text="Carolino Anaya - IMSS" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="459.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicRuta25" prefHeight="48.0" prefWidth="135.0" text="Olmeca - Xalapa" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="610.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicRuta32" prefHeight="48.0" prefWidth="135.0" text="Coapexpan - SEV" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="756.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicRuta36" prefHeight="48.0" prefWidth="135.0" text="Margaritas - CBTIS 13" textAlignment="CENTER" wrapText="true" />
+      <ComboBox fx:id="cbNombresColonias" layoutX="548.0" layoutY="80.0" prefHeight="27.0" prefWidth="239.0" />
+   </children>
+</AnchorPane>
