@@ -72,26 +72,3 @@ class MeResource(Resource):
         user = User.get_by_id(id=get_jwt_identity())
 
         return user_schema.dump(user).data, HTTPStatus.OK
-
-
-class UserRecipeListResource(Resource):
-    
-    @jwt_required(optional=True)
-    @use_kwargs({'visibility': fields.Str(missing='public')}, location="query")
-    def get(self, username, visibility):
-        
-        user = User.get_by_username(username=username)
-
-        if user is None:
-            return {'messages': 'User not found'}, HTTPStatus.NOT_FOUND
-
-        current_user = get_jwt_identity()
-
-        if current_user == user.id and visibility in ['all', 'private']:
-            pass
-        else:
-            visibility = 'public'
-
-        recipes = Recipe.get_all_by_user(user_id=user.id, visibility=visibility)
-
-        return recipe_list_schema.dump(recipes), HTTPStatus.OK
