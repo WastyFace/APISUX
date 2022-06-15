@@ -6,6 +6,7 @@ class Ruta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100), nullable=False)
     recorrido = db.Column(db.String(600), nullable=False)
+    colonias = db.Column(db.String(600), nullable=False)
     imgPath = db.Column(db.String(500), nullable=False)
     created_at = db.Column(db.DateTime(), nullable=False, server_default=db.func.now())
     updated_at = db.Column(db.DateTime(), nullable=False, server_default=db.func.now(), onupdate=db.func.now())

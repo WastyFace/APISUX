@@ -21,11 +21,10 @@ class ColoniaListResource(Resource):
 
         return colonia_list_schema.dump(colonias), HTTPStatus.OK
 
-    @jwt_required(optional=True)
+    @jwt_required()
     def post(self):
         
         json_data = request.get_json()
-
         current_user = get_jwt_identity()
 
         try:
@@ -35,6 +34,10 @@ class ColoniaListResource(Resource):
 
         colonia = Colonia(**data)
         colonia.user_id = current_user
+
+        if Colonia.get_by_nombre(colonia.nombre):
+            return {'message': 'Name already used'}, HTTPStatus.BAD_REQUEST
+        
         colonia.save()
 
         return colonia_schema.dump(colonia), HTTPStatus.CREATED
@@ -75,7 +78,7 @@ class ColoniaResource(Resource):
         return colonia_schema.dump(colonia), HTTPStatus.OK
         
 
-    @jwt_required(optional=True)
+    @jwt_required()
     def delete(self, colonia_id):
         
         colonia = Colonia.get_by_id(colonia_id=colonia_id)

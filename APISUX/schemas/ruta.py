@@ -10,6 +10,7 @@ class RutaSchema(Schema):
     id = fields.Integer(dump_only=True)
     nombre = fields.String(required=True, validate=[validate.Length(max=100)])
     recorrido = fields.String(required=True, validate=[validate.Length(max=600)])
+    colonias = fields.String(required=True, validate=[validate.Length(max=600)])
     imgPath = fields.String(required=True, validate=[validate.Length(max=500)])
 
     created_at = fields.DateTime(dump_only=True)

@@ -12,6 +12,7 @@ public class Ruta {
     private String id;
     private String nombre;
     private String recorrido;
+    private String colonias;
     private String imgPath;
     private String created_at;
     private String updated_at;
@@ -38,6 +39,14 @@ public class Ruta {
 
     public void setRecorrido(String recorrido) {
         this.recorrido = recorrido;
+    }
+
+    public String getColonias() {
+        return colonias;
+    }
+
+    public void setColonias(String colonias) {
+        this.colonias = colonias;
     }
 
     public String getImgPath() {

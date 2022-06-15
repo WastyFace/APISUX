@@ -17,6 +17,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import pojo.Colonia;
+import pojo.Ruta;
 
 /**
  * FXML Controller class
@@ -26,17 +28,17 @@ import javafx.stage.Stage;
 public class FXMLEliminarRutaController implements Initializable {
 
     @FXML
-    private ComboBox<?> cbRutas;
+    private ComboBox<Ruta> cbRutas;
     @FXML
     private TextArea taRecorrido;
     @FXML
     private ImageView ivImagenRuta;
     @FXML
-    private TableView<?> tvColonias;
-    @FXML
-    private TableColumn<?, ?> tvRutas;
+    private TableView<Colonia> tvColonias;
     
     private String token;
+    @FXML
+    private TableColumn tcColonias;
 
     /**
      * Initializes the controller class.

@@ -5,21 +5,20 @@ from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 from http import HTTPStatus
+import json
+from types import SimpleNamespace
 
 from webargs import fields
 from webargs.flaskparser import use_kwargs
 
 from utils import hash_password
 
-from models.recipe import Recipe
 from models.user import User
 
-from schemas.recipe import RecipeSchema
 from schemas.user import UserSchema
 
 user_schema = UserSchema()
 user_public_schema = UserSchema(exclude=('email', ))
-recipe_list_schema = RecipeSchema(many=True)
 
 
 class UserListResource(Resource):
@@ -32,13 +31,14 @@ class UserListResource(Resource):
         except ValidationError as exc:
             return {'message': "Validation errors", 'errors': exc.messages}, HTTPStatus.BAD_REQUEST
 
-        if User.get_by_username(username):
-            return {'message': 'username already used'}, HTTPStatus.BAD_REQUEST
-
-        if User.get_by_email(email):
-            return {'message': 'email already used'}, HTTPStatus.BAD_REQUEST
-
         user = User(**data)
+
+        if User.get_by_username(user.username):
+            return {'message': 'Username already used'}, HTTPStatus.BAD_REQUEST
+
+        if User.get_by_email(user.email):
+            return {'message': 'E-mail already used'}, HTTPStatus.BAD_REQUEST
+
         user.save()
 
         return user_schema.dump(user), HTTPStatus.CREATED

@@ -16,15 +16,14 @@ block_list = set()
 
 class TokenResource(Resource):
 
-
     def post(self):
 
         json_data = request.get_json()
 
-        email = json_data.get('email')
+        username = json_data.get('username')
         password = json_data.get('password')
 
-        user = User.get_by_email(email=email)
+        user = User.get_by_username(username=username)
 
         if not user or not check_password(password, user.password):
             return {'message': 'username or password is incorrect'}, HTTPStatus.UNAUTHORIZED
@@ -36,7 +35,6 @@ class TokenResource(Resource):
 
 
 class RefreshResource(Resource):
-
 
     @jwt_required(refresh=True)
     def post(self):

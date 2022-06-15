@@ -21,7 +21,7 @@ class RutaListResource(Resource):
 
         return ruta_list_schema.dump(rutas), HTTPStatus.OK
 
-    @jwt_required(optional=True)
+    @jwt_required()
     def post(self):
         
         json_data = request.get_json()
@@ -75,7 +75,7 @@ class RutaResource(Resource):
         return ruta_schema.dump(ruta), HTTPStatus.OK
         
 
-    @jwt_required(optional=True)
+    @jwt_required()
     def delete(self, ruta_id):
         
         ruta = Ruta.get_by_id(ruta_id=ruta_id)
