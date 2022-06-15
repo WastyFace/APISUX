@@ -7,7 +7,7 @@ from config import Config
 from extensions import db, jwt
 
 
-from resources.user import UserListResource, UserResource, MeResource, UserRecipeListResource
+from resources.user import UserListResource, UserResource, MeResource
 from resources.token import TokenResource, RefreshResource, RevokeResource, block_list
 from resources.colonia import ColoniaListResource, ColoniaResource, ColoniaPublishResource
 from resources.ruta import RutaListResource, RutaResource, RutaPublishResource
