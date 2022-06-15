@@ -28,7 +28,7 @@ class UserListResource(Resource):
 
         try:
             data = user_schema.load(data=json_data)
-        except ValidationError as exc:
+        except ValidationError as exc: # noqa
             return {'message': "Validation errors", 'errors': exc.messages}, HTTPStatus.BAD_REQUEST
 
         user = User(**data)
