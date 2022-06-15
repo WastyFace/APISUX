@@ -23,14 +23,14 @@ class RutaListResource(Resource):
 
     @jwt_required()
     def post(self):
-        
+
         json_data = request.get_json()
 
         current_user = get_jwt_identity()
 
         try:
             data = ruta_schema.load(data=json_data)
-        except ValidationError as exc:
+        except ValidationError as exc: # noqa
             return {'message': "Validation errors", 'errors': exc.messages}, HTTPStatus.BAD_REQUEST
 
         ruta = Ruta(**data)
@@ -59,9 +59,9 @@ class RutaResource(Resource):
 
         try:
             data = ruta_schema.load(data=json_data, partial=('nombre',))
-        except ValidationError as exc:
+        except ValidationError as exc: # noqa
             return {'message': "Validation errors", 'errors': exc.messages}, HTTPStatus.BAD_REQUEST
-    
+
         ruta = Ruta.get_by_id(ruta_id=ruta_id)
 
         if ruta is None:
@@ -73,11 +73,11 @@ class RutaResource(Resource):
         ruta.save()
 
         return ruta_schema.dump(ruta), HTTPStatus.OK
-        
+
 
     @jwt_required()
     def delete(self, ruta_id):
-        
+
         ruta = Ruta.get_by_id(ruta_id=ruta_id)
 
         if ruta is None:
@@ -101,10 +101,10 @@ class RutaPublishResource(Resource):
         ruta.save()
 
         return {}, HTTPStatus.NO_CONTENT
-    
-    @jwt_required() 
+
+    @jwt_required()
     def delete(self, ruta_id):
-        
+
         ruta = Ruta.get_by_id(ruta_id=ruta_id)
 
         if ruta is None:

@@ -23,13 +23,13 @@ class ColoniaListResource(Resource):
 
     @jwt_required()
     def post(self):
-        
+
         json_data = request.get_json()
         current_user = get_jwt_identity()
 
         try:
             data = colonia_schema.load(data=json_data)
-        except ValidationError as exc:
+        except ValidationError as exc: # noqa
             return {'message': "Validation errors", 'errors': exc.messages}, HTTPStatus.BAD_REQUEST
 
         colonia = Colonia(**data)
@@ -37,7 +37,7 @@ class ColoniaListResource(Resource):
 
         if Colonia.get_by_nombre(colonia.nombre):
             return {'message': 'Name already used'}, HTTPStatus.BAD_REQUEST
-        
+
         colonia.save()
 
         return colonia_schema.dump(colonia), HTTPStatus.CREATED
@@ -62,9 +62,9 @@ class ColoniaResource(Resource):
 
         try:
             data = colonia_schema.load(data=json_data, partial=('nombre',))
-        except ValidationError as exc:
+        except ValidationError as exc: # noqa
             return {'message': "Validation errors", 'errors': exc.messages}, HTTPStatus.BAD_REQUEST
-    
+
         colonia = Colonia.get_by_id(colonia_id=colonia_id)
 
         if colonia is None:
@@ -76,11 +76,11 @@ class ColoniaResource(Resource):
         colonia.save()
 
         return colonia_schema.dump(colonia), HTTPStatus.OK
-        
+
 
     @jwt_required()
     def delete(self, colonia_id):
-        
+
         colonia = Colonia.get_by_id(colonia_id=colonia_id)
 
         if colonia is None:
@@ -104,10 +104,10 @@ class ColoniaPublishResource(Resource):
         colonia.save()
 
         return {}, HTTPStatus.NO_CONTENT
-    
-    @jwt_required() 
+
+    @jwt_required()
     def delete(self, colonia_id):
-        
+
         colonia = Colonia.get_by_id(colonia_id=colonia_id)
 
         if colonia is None:
