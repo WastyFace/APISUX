@@ -2,7 +2,6 @@ from flask import Flask, request
 from flask_migrate import Migrate
 from flask_restful import Api
 from werkzeug.utils import secure_filename
-from ffmpeg import FFmpeg
 
 from config import Config
 from extensions import db, jwt

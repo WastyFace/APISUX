@@ -7,4 +7,3 @@ passlib==1.7.4
 Flask-JWT-Extended==4.3.1
 marshmallow==3.15.0
 webargs==8.1.0
-ffmpeg-python==0.2.0
