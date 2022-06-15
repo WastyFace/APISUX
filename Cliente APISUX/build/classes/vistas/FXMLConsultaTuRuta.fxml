@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -16,18 +17,26 @@
             <Font size="39.0" />
          </font>
       </Label>
-      <Label layoutX="176.0" layoutY="177.0" text="Colonia de origen:">
+      <Label layoutX="22.0" layoutY="102.0" text="Colonia de origen:">
          <font>
-            <Font size="24.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="176.0" layoutY="276.0" text="Colonia de destino:">
+      <Label layoutX="418.0" layoutY="102.0" text="Colonia de destino:">
          <font>
-            <Font size="24.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="tfColoniaOrigen" layoutX="383.0" layoutY="178.0" prefHeight="27.0" prefWidth="259.0" />
-      <TextField fx:id="tfColoniaDestino" layoutX="383.0" layoutY="277.0" prefHeight="27.0" prefWidth="259.0" />
-      <Button layoutX="418.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicConsultar" text="Consultar" />
+      <Button layoutX="815.0" layoutY="98.0" mnemonicParsing="false" onAction="#clicConsultar" text="Consultar" />
+      <ComboBox fx:id="cbColonias" layoutX="157.0" layoutY="98.0" prefHeight="27.0" prefWidth="233.0" />
+      <ComboBox fx:id="cbColonias2" layoutX="562.0" layoutY="98.0" prefHeight="27.0" prefWidth="233.0" />
+      <ImageView fx:id="ivImagenRuta" fitHeight="261.0" fitWidth="394.0" layoutX="467.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true" />
+      <TextArea fx:id="taRecorrido" editable="false" layoutX="101.0" layoutY="342.0" prefHeight="123.0" prefWidth="335.0" />
+      <TextArea fx:id="taColonias" editable="false" layoutX="101.0" layoutY="198.0" prefHeight="123.0" prefWidth="335.0" />
+      <Label layoutX="22.0" layoutY="342.0" text="Recorrido:" />
+      <Label layoutX="22.0" layoutY="198.0" text="Colonias:" />
+      <Label layoutX="22.0" layoutY="164.0" text="Ruta:" />
+      <TextField fx:id="tfRuta" editable="false" layoutX="101.0" layoutY="159.0" prefHeight="27.0" prefWidth="335.0" />
+      <Button layoutX="441.0" layoutY="478.0" mnemonicParsing="false" onAction="#clicCerrar" text="Cerrar" />
    </children>
 </AnchorPane>

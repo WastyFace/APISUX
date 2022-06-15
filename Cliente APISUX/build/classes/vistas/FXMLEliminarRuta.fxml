@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FXMLEliminarRutaController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74bcff" height="71.0" stroke="BLACK" strokeType="INSIDE" width="906.0" />
+      <Label layoutX="256.0" layoutY="12.0" text="APISUX - Eliminar ruta">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbRutas" layoutX="265.0" layoutY="94.0" prefHeight="27.0" prefWidth="376.0" promptText="Seleccione una ruta" />
+      <Label layoutX="14.0" layoutY="337.0" text="Recorrido:" />
+      <TextArea fx:id="taRecorrido" editable="false" layoutX="93.0" layoutY="337.0" prefHeight="123.0" prefWidth="335.0" />
+      <Button layoutX="412.0" layoutY="478.0" mnemonicParsing="false" onAction="#clicCerrar" text="Cerrar" />
+      <ImageView fx:id="ivImagenRuta" fitHeight="261.0" fitWidth="394.0" layoutX="459.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true" />
+      <TableView fx:id="tvColonias" layoutX="14.0" layoutY="155.0" prefHeight="156.0" prefWidth="412.0">
+         <columns>
+            <TableColumn fx:id="tvRutas" prefWidth="378.0" text="Colonias" />
+         </columns>
+      </TableView>
+      <Button layoutX="489.0" layoutY="478.0" mnemonicParsing="false" onAction="#clicEliminar" text="Eliminar" />
+   </children>
+</AnchorPane>

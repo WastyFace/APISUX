@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FXMLEliminarColoniaController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74bcff" height="71.0" stroke="BLACK" strokeType="INSIDE" width="906.0" />
+      <Label layoutX="256.0" layoutY="12.0" text="APISUX - Eliminar colonia">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Label layoutX="295.0" layoutY="253.0" text="Nombre:" />
+      <Button layoutX="367.0" layoutY="478.0" mnemonicParsing="false" onAction="#clicCerrar" text="Cerrar" />
+      <Label layoutX="295.0" layoutY="316.0" text="Código postal:" />
+      <TextField fx:id="tfCodigoPostal" editable="false" layoutX="411.0" layoutY="312.0" prefHeight="27.0" prefWidth="249.0" />
+      <TextField fx:id="tfNombre" editable="false" layoutX="411.0" layoutY="248.0" prefHeight="27.0" prefWidth="249.0" />
+      <Button layoutX="453.0" layoutY="478.0" mnemonicParsing="false" onAction="#clicEliminar" text="Eliminar" />
+      <Label layoutX="295.0" layoutY="185.0" text="Colonia:" />
+      <ComboBox fx:id="cbColonias" layoutX="411.0" layoutY="181.0" prefHeight="27.0" prefWidth="249.0" />
+   </children>
+</AnchorPane>

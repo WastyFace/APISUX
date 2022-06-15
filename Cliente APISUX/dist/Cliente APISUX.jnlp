@@ -17,6 +17,7 @@
     <jar href="lib/jackson-annotations-2.2.0.jar" size="33436" download="eager" />
     <jar href="lib/jackson-core-2.1.5.jar" size="206918" download="eager" />
     <jar href="lib/jackson-databind-2.0.1.jar" size="846423" download="eager" />
+    <jar href="lib/maven-shared-utils-3.2.1.jar" size="166562" download="eager" />
     <jar href="lib/slf4j-api-1.7.36.jar" size="41125" download="eager" />
     <jar href="lib/slf4j-simple-1.7.36.jar" size="15333" download="eager" />
   </resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FXMLMenuPrincipalAdminController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74bcff" height="75.0" stroke="BLACK" strokeType="INSIDE" width="906.0" />
+      <Label fx:id="lbTitulo" layoutX="266.0" layoutY="15.0" text="APISUX - Administrador">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Button layoutX="268.0" layoutY="131.0" mnemonicParsing="false" onAction="#clicAgregarRuta" prefHeight="82.0" prefWidth="184.0" text="Agregar ruta">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button layoutX="475.0" layoutY="131.0" mnemonicParsing="false" onAction="#clicAgregarColonia" prefHeight="82.0" prefWidth="184.0" text="Agregar Colonia">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button layoutX="782.0" layoutY="25.0" mnemonicParsing="false" onAction="#clicCerrarSesion" text="Cerrar sesión" />
+      <Button layoutX="475.0" layoutY="244.0" mnemonicParsing="false" onAction="#clicModificarColonia" prefHeight="82.0" prefWidth="184.0" text="Modificar Colonia">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button layoutX="268.0" layoutY="244.0" mnemonicParsing="false" onAction="#clicModificarRuta" prefHeight="82.0" prefWidth="184.0" text="Modificar ruta">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button layoutX="475.0" layoutY="365.0" mnemonicParsing="false" onAction="#clicEliminarColonia" prefHeight="82.0" prefWidth="184.0" text="Eliminar Colonia">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button layoutX="268.0" layoutY="365.0" mnemonicParsing="false" onAction="#clicEliminarRuta" prefHeight="82.0" prefWidth="184.0" text="Eliminar ruta">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,95 +9,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1178.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FXMLRutasColoniaController">
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FXMLRutasColoniaController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74bcff" height="71.0" stroke="BLACK" strokeType="INSIDE" width="1178.0" />
-      <Label layoutX="441.0" layoutY="12.0" text="Rutas por colonia">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74bcff" height="71.0" stroke="BLACK" strokeType="INSIDE" width="906.0" />
+      <Label layoutX="256.0" layoutY="12.0" text="APISUX - Consultar colonia">
          <font>
             <Font size="39.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicXocotla" prefHeight="48.0" prefWidth="135.0" text="Xocotla" textAlignment="CENTER" wrapText="true" />
-      <Label layoutX="14.0" layoutY="84.0" text="Selecciona la colonia de la que quieras conocer sus rutas:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="14.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicOtilpan" prefHeight="48.0" prefWidth="135.0" text="Otilpan" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="14.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicLuzDelBarrio" prefHeight="48.0" prefWidth="135.0" text="Luz del Barrio" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="14.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicZonaCentro" prefHeight="48.0" prefWidth="135.0" text="Zona Centro" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="14.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicFranciscoFerrer" prefHeight="48.0" prefWidth="135.0" text="Francisco Ferrer Guardia" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="14.0" layoutY="623.0" mnemonicParsing="false" onAction="#clicMiguelHidalgo" prefHeight="48.0" prefWidth="135.0" text="Miguel Hidalgo" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#clicBuenaVista" prefHeight="48.0" prefWidth="135.0" text="Buenavista" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="14.0" layoutY="503.0" mnemonicParsing="false" onAction="#clicVenustianoCarranza" prefHeight="48.0" prefWidth="135.0" text="Venustiano Carranza" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="14.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicTrancas" prefHeight="48.0" prefWidth="135.0" text="Trancas" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="14.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicEmilianoZapata" prefHeight="48.0" prefWidth="135.0" text="Emiliano Zapata" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="162.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicRevolucion" prefHeight="48.0" prefWidth="135.0" text="Revolución" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="162.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicOjoDeAgua" prefHeight="48.0" prefWidth="135.0" text="Ojo de Agua" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="162.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicCuauhtemoc" prefHeight="48.0" prefWidth="135.0" text="Cuauhtemoc" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="162.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicPastoresa" prefHeight="48.0" prefWidth="135.0" text="Pastoresa" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="162.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicDiazMiron" prefHeight="48.0" prefWidth="135.0" text="Diaz Mirón" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="162.0" layoutY="623.0" mnemonicParsing="false" onAction="#clic26DeAgosto" prefHeight="48.0" prefWidth="135.0" text="26 de Agosto" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="162.0" layoutY="563.0" mnemonicParsing="false" onAction="#EncantoDelSumidero" prefHeight="48.0" prefWidth="135.0" text="Encanto del Sumidero" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="162.0" layoutY="503.0" mnemonicParsing="false" onAction="#clicFuentesDeLasAnimas" prefHeight="48.0" prefWidth="135.0" text="Fuentes de las Ánimas" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="162.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicPredioDeLaVirgen" prefHeight="48.0" prefWidth="135.0" text="Predio de la Virgen" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="162.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicArboledasDelTronconal" prefHeight="48.0" prefWidth="135.0" text="Arboledas del Tronconal" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="305.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicElCoyol" prefHeight="48.0" prefWidth="135.0" text="El coyol" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="305.0" layoutY="503.0" mnemonicParsing="false" onAction="#clicLosPrados" prefHeight="48.0" prefWidth="135.0" text="Los Prados" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="305.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicFederal" prefHeight="48.0" prefWidth="135.0" text="Federal" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="305.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicJoseCardel" prefHeight="48.0" prefWidth="135.0" text="José Cardel" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="305.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicBuenaVista" prefHeight="48.0" prefWidth="135.0" text="Buena Vista" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="305.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicAdolfoLopezMateos" prefHeight="48.0" prefWidth="135.0" text="Adolfo López Mateos" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="305.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicUnionFerrocarrilera" prefHeight="48.0" prefWidth="135.0" text="Unión Ferrocarrilera" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="446.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicGuadalupeVictoria" prefHeight="48.0" prefWidth="135.0" text="Guadalupe Victoria" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="305.0" layoutY="623.0" mnemonicParsing="false" onAction="#clicRepresaDelCarmen" prefHeight="48.0" prefWidth="135.0" text="Represa del Carmen" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="446.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicVicenteGuerrero" prefHeight="48.0" prefWidth="135.0" text="Vicente Guerrero" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="446.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicColoniaDelMaestro" prefHeight="48.0" prefWidth="135.0" text="Colonia del Maestro" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="446.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicUnidadMagisterial" prefHeight="48.0" prefWidth="135.0" text="Unidad Magisterial" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="305.0" layoutY="563.0" mnemonicParsing="false" onAction="#clic21DeMarzo" prefHeight="48.0" prefWidth="135.0" text="21 de Marzo" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="305.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicProgresoMacuilteptl" prefHeight="48.0" prefWidth="135.0" text="Progreso Macuiltepetl" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="446.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicZonaUniversitaria" prefHeight="48.0" prefWidth="135.0" text="Zona Universitaria" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="446.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicRafaelLucio" prefHeight="48.0" prefWidth="135.0" text="Rafael Lucio" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="446.0" layoutY="563.0" mnemonicParsing="false" onAction="#clic3DeMayo" prefHeight="48.0" prefWidth="135.0" text="3 de Mayo" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="446.0" layoutY="623.0" mnemonicParsing="false" onAction="#clicElMirador" prefHeight="48.0" prefWidth="135.0" text="El Mirador" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="446.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicInfonavitPomona" prefHeight="48.0" prefWidth="135.0" text="INFONAVIT Pomona" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="446.0" layoutY="503.0" mnemonicParsing="false" onAction="#clicSalud" prefHeight="48.0" prefWidth="135.0" text="Salud" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="592.0" layoutY="503.0" mnemonicParsing="false" onAction="#clicNacional" prefHeight="48.0" prefWidth="135.0" text="Nacional" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="592.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicMorelos" prefHeight="48.0" prefWidth="135.0" text="Morelos" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="592.0" layoutY="623.0" mnemonicParsing="false" onAction="#clicAcueducto" prefHeight="48.0" prefWidth="135.0" text="Acueducto" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="592.0" layoutY="563.0" mnemonicParsing="false" onAction="#clicMonteVideo" prefHeight="48.0" prefWidth="135.0" text="Monte Video" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="592.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicObreroCampesina" prefHeight="48.0" prefWidth="135.0" text="Obrero Campesina" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="592.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicAguacatal" prefHeight="48.0" prefWidth="135.0" text="Aguacatal" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="592.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicDiamante" prefHeight="48.0" prefWidth="135.0" text="Diamante" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="592.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicFovisste" prefHeight="48.0" prefWidth="135.0" text="FOVISSTE" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="592.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicRubenRJaramillo" prefHeight="48.0" prefWidth="135.0" text="Rubén R. Jaramillo" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="592.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicCasaBlanca" prefHeight="48.0" prefWidth="135.0" text="Casa Blanca" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="736.0" layoutY="503.0" mnemonicParsing="false" onAction="#clicJardinesDeXAlapa" prefHeight="48.0" prefWidth="135.0" text="Jardines de Xalapa" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="736.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicSumidero" prefHeight="48.0" prefWidth="135.0" text="Sumidero" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="736.0" layoutY="623.0" mnemonicParsing="false" onAction="#clicElHaya" prefHeight="48.0" prefWidth="135.0" text="El Haya" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="736.0" layoutY="563.0" mnemonicParsing="false" onAction="#clicSostenesMBlanco" prefHeight="48.0" prefWidth="135.0" text="Sostenes M. Blanco" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="736.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicSanAntonio" prefHeight="48.0" prefWidth="135.0" text="San Antonio" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="736.0" layoutY="173.0" mnemonicParsing="false" onAction="#clic16DeSeptiembre" prefHeight="48.0" prefWidth="135.0" text="16 de Septiembre" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="736.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicOlmeca" prefHeight="48.0" prefWidth="135.0" text="Olmeca" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="736.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicRanchoViejo" prefHeight="48.0" prefWidth="135.0" text="Rancho Viejo" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="736.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicLaLagunilla" prefHeight="48.0" prefWidth="135.0" text="La lagunilla" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="736.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicCarolinoAnaya" prefHeight="48.0" prefWidth="135.0" text="Carolino Anaya" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="882.0" layoutY="503.0" mnemonicParsing="false" onAction="#clicMartiresDeChicago" prefHeight="48.0" prefWidth="135.0" text="Mártires de Chicago" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="882.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicLomasDelParaiso" prefHeight="48.0" prefWidth="135.0" text="Lomas del Paraíso" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="882.0" layoutY="623.0" mnemonicParsing="false" onAction="#clicCoapexpan" prefHeight="48.0" prefWidth="135.0" text="Coapexpan" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="882.0" layoutY="563.0" mnemonicParsing="false" onAction="#clicArroyoBlanco" prefHeight="48.0" prefWidth="135.0" text="Arroyo Blanco" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="882.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicLasMargaritas" prefHeight="48.0" prefWidth="135.0" text="Las Margaritas" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="882.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicTabasco" prefHeight="48.0" prefWidth="135.0" text="Tabasco" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="882.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicXalapa2000" prefHeight="48.0" prefWidth="135.0" text="Xalapa 2000" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="882.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicSantaRosa" prefHeight="48.0" prefWidth="135.0" text="Santa Rosa" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="882.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicFranciscoVilla" prefHeight="48.0" prefWidth="135.0" text="Francisco Villa" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="882.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicBellaVista" prefHeight="48.0" prefWidth="135.0" text="Bella Vista" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="1027.0" layoutY="335.0" mnemonicParsing="false" onAction="#clicVistaHermosa" prefHeight="48.0" prefWidth="135.0" text="Vista Hermosa" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="1027.0" layoutY="118.0" mnemonicParsing="false" onAction="#clicLasFlores" prefHeight="48.0" prefWidth="135.0" text="Las Flores" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="1027.0" layoutY="226.0" mnemonicParsing="false" onAction="#clicRubiAnimas" prefHeight="48.0" prefWidth="135.0" text="Rubí Ánimas" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="1027.0" layoutY="280.0" mnemonicParsing="false" onAction="#clicMexico" prefHeight="48.0" prefWidth="135.0" text="México" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="1027.0" layoutY="173.0" mnemonicParsing="false" onAction="#clicJardinesDeLasAnimas" prefHeight="48.0" prefWidth="135.0" text="Jardines de las Ánimas" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="1027.0" layoutY="392.0" mnemonicParsing="false" onAction="#clicHigueras" prefHeight="48.0" prefWidth="135.0" text="Higueras" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="1027.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicUnidadHabitacionalDelValle" prefHeight="48.0" prefWidth="135.0" text="Unidad Habitacional del Valle" textAlignment="CENTER" wrapText="true" />
+      <ComboBox fx:id="cbColonias" layoutX="411.0" layoutY="95.0" prefHeight="27.0" prefWidth="249.0" />
+      <Label layoutX="295.0" layoutY="99.0" text="Colonia:" />
+      <Button layoutX="426.0" layoutY="478.0" mnemonicParsing="false" onAction="#clicCerrar" text="Cerrar" />
+      <Label layoutX="296.0" layoutY="162.0" text="Código postal:" />
+      <TextField fx:id="tfCodigoPostal" editable="false" layoutX="411.0" layoutY="158.0" prefHeight="27.0" prefWidth="249.0" />
+      <TableView layoutX="296.0" layoutY="235.0" prefHeight="200.0" prefWidth="354.0">
+        <columns>
+          <TableColumn fx:id="tvRutas" prefWidth="353.0" text="Rutas que pasan por esta colonia" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
