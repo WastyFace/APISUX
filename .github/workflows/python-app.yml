@@ -64,4 +64,4 @@ jobs:
       with:
           context: ./APISUX
           push: true
-          tags: caarljohnnsonn/APISUX:latest
+          tags: caarljohnnsonn/apisux:latest
