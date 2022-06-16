@@ -43,7 +43,8 @@ jobs:
         flask db migrate
         flask db upgrade
         python3 ./app.py &
-        sleep 10
+        sleep 5
+        sh ./postsCol.sh
     - name: Test with pytest
       run: pytest
     - name: Set up QEMU
