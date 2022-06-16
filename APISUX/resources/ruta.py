@@ -68,7 +68,6 @@ class RutaResource(Resource):
             return {'message': 'Ruta no encontrada'}, HTTPStatus.NOT_FOUND
 
         ruta.nombre = data.get('nombre') or ruta.nombre
-        ruta.codigoPostal = data.get('codigoPostal') or ruta.codigoPostal
 
         ruta.save()
 
