@@ -65,3 +65,50 @@ def test_PostColonia():
     generalResponse = connection.getresponse()
     statusCode = generalResponse.status
     assert HTTPStatus.CREATED == statusCode
+
+def test_PatchColonia():
+    global token
+    global bear
+    connection = httpClient.HTTPConnection('127.0.0.1:9090')
+    data = {
+        "nombre" : "Colonia Nueva Editada",
+        "codigoPostal" : "290117"
+    }
+    bear = "Bearer " + token
+    data2 = json.dumps(data)
+    headers = {"Content-Type": "application/json", "Authorization": bear}
+    response = connection.request(
+        "PATCH",
+        "/colonias/1",
+        data2,
+        headers,
+    )
+    generalResponse = connection.getresponse()
+    statusCode = generalResponse.status
+    assert HTTPStatus.OK == statusCode
+
+def test_DeleteColonia():
+    global token
+    global bear
+    connection = httpClient.HTTPConnection('127.0.0.1:9090')
+    data = {
+        "nombre" : "Colonia Nueva Editada",
+        "codigoPostal" : "290117"
+    }
+    bear = "Bearer " + token
+    data2 = json.dumps(data)
+    headers = {"Content-Type": "application/json", "Authorization": bear}
+    response = connection.request(
+        "DELETE",
+        "/colonias/1",
+        data2,
+        headers,
+    )
+    generalResponse = connection.getresponse()
+    statusCode = generalResponse.status
+    assert HTTPStatus.NO_CONTENT == statusCode
+
+def test_GetColonias():
+    x = requests.get('http://127.0.0.1:9090/colonias')
+    statusCode = x.status_code
+    assert HTTPStatus.OK == statusCode
