@@ -1,8 +1,12 @@
-FROM ubuntu:20.04
-RUN apt-get update -y
-RUN apt-get -y install python3-pip
-COPY . /APISUX
+FROM python:3.8-slim-buster
+
+EXPOSE 9000/tcp
+EXPOSE 9000/udp
 WORKDIR /APISUX
-RUN pip install -r /APISUX/requirements.txt
-ENTRYPOINT ["python"]
+
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
 CMD [“python3”,,“-m”,”flask”,”run”,”--host=0.0.0.0”]
