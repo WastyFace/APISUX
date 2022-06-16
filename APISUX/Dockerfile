@@ -5,4 +5,4 @@ COPY . /APISUX
 WORKDIR /APISUX
 RUN pip install -r /APISUX/requirements.txt
 ENTRYPOINT ["python"]
-CMD ["app.py"]
+CMD [“python3”,,“-m”,”flask”,”run”,”--host=0.0.0.0”]
