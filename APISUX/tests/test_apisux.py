@@ -13,7 +13,7 @@ def test_PostAdmin():
     }
     data2 = json.dumps(data)
     headers = {"Content-Type": "application/json"}
-    response = connection.request(
+    connection.request(
         "POST",
         "/users",
         data2,
@@ -23,12 +23,13 @@ def test_PostAdmin():
     statusCode = generalResponse.status
     assert HTTPStatus.CREATED == statusCode
 
+
 def test_Login():
     global token
     connection = httpClient.HTTPConnection('127.0.0.1:9090')
     data = {
-        "username" : "admin1234",
-        "password" : "12345"
+        "username": "admin1234",
+        "password": "12345"
     }
     data2 = json.dumps(data)
     headers = {"Content-Type": "application/json"}
