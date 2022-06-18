@@ -1,5 +1,6 @@
 from extensions import db
 
+
 class Ruta(db.Model):
     __tablename__ = 'ruta'
 
