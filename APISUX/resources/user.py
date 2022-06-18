@@ -57,10 +57,10 @@ class UserResource(Resource):
         current_user = get_jwt_identity()
 
         if current_user == user.id:
-             data = user_schema.dump(user)
+            data = user_schema.dump(user)
 
         else:
-             data = user_public_schema.dump(user)
+            data = user_public_schema.dump(user)
 
         return data, HTTPStatus.OK
 
