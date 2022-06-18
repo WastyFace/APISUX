@@ -15,7 +15,7 @@ class User(db.Model):
     @classmethod
     def get_by_username(cls, username):
         return cls.query.filter_by(username=username).first()
-    
+
     @classmethod
     def get_by_email(cls, email):
         return cls.query.filter_by(email=email).first()
@@ -27,4 +27,3 @@ class User(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
-        

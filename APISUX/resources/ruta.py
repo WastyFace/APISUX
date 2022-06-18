@@ -1,9 +1,7 @@
 from flask import request
 from flask_restful import Resource
-from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
-from flask_jwt_extended import JWTManager
 from http import HTTPStatus
 
 from models.ruta import Ruta
@@ -72,7 +70,6 @@ class RutaResource(Resource):
         ruta.save()
 
         return ruta_schema.dump(ruta), HTTPStatus.OK
-
 
     @jwt_required()
     def delete(self, ruta_id):

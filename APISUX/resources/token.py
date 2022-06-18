@@ -6,7 +6,6 @@ from flask_jwt_extended import create_refresh_token
 from flask_jwt_extended import get_jwt
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
-from flask_jwt_extended import JWTManager
 
 from utils import check_password
 from models.user import User
@@ -54,4 +53,3 @@ class RevokeResource(Resource):
         block_list.add(jti)
 
         return {'message': 'Successfully logged out'}, HTTPStatus.OK
-
