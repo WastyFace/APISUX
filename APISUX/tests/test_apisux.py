@@ -33,7 +33,7 @@ def test_Login():
     }
     data2 = json.dumps(data)
     headers = {"Content-Type": "application/json"}
-    response = connection.request(
+    connection.request(
         "POST",
         "/token",
         data2,
@@ -46,18 +46,19 @@ def test_Login():
     token = json_format["access_token"]
     assert HTTPStatus.OK == statusCode
 
+
 def test_PostColonia():
     global token
     global bear
     connection = httpClient.HTTPConnection('127.0.0.1:9090')
     data = {
-        "nombre" : "Colonia Nueva",
-        "codigoPostal" : "290116"
+        "nombre": "Colonia Nueva",
+        "codigoPostal": "290116"
     }
     bear = "Bearer " + token
     data2 = json.dumps(data)
     headers = {"Content-Type": "application/json", "Authorization": bear}
-    response = connection.request(
+    connection.request(
         "POST",
         "/colonias",
         data2,
@@ -67,18 +68,19 @@ def test_PostColonia():
     statusCode = generalResponse.status
     assert HTTPStatus.CREATED == statusCode
 
+
 def test_PatchColonia():
     global token
     global bear
     connection = httpClient.HTTPConnection('127.0.0.1:9090')
     data = {
-        "nombre" : "Colonia Nueva Editada",
-        "codigoPostal" : "290117"
+        "nombre": "Colonia Nueva Editada",
+        "codigoPostal": "290117"
     }
     bear = "Bearer " + token
     data2 = json.dumps(data)
     headers = {"Content-Type": "application/json", "Authorization": bear}
-    response = connection.request(
+    connection.request(
         "PATCH",
         "/colonias/1",
         data2,
@@ -88,18 +90,19 @@ def test_PatchColonia():
     statusCode = generalResponse.status
     assert HTTPStatus.OK == statusCode
 
+
 def test_DeleteColonia():
     global token
     global bear
     connection = httpClient.HTTPConnection('127.0.0.1:9090')
     data = {
-        "nombre" : "Colonia Nueva Editada",
-        "codigoPostal" : "290117"
+        "nombre": "Colonia Nueva Editada",
+        "codigoPostal": "290117"
     }
     bear = "Bearer " + token
     data2 = json.dumps(data)
     headers = {"Content-Type": "application/json", "Authorization": bear}
-    response = connection.request(
+    connection.request(
         "DELETE",
         "/colonias/1",
         data2,
@@ -109,25 +112,27 @@ def test_DeleteColonia():
     statusCode = generalResponse.status
     assert HTTPStatus.NO_CONTENT == statusCode
 
+
 def test_GetColonias():
     x = requests.get('http://127.0.0.1:9090/colonias')
     statusCode = x.status_code
     assert HTTPStatus.OK == statusCode
+
 
 def test_PostRuta():
     global token
     global bear
     connection = httpClient.HTTPConnection('127.0.0.1:9090')
     data = {
-        "nombre" : "Ruta Nueva",
-        "recorrido" : "Agua pasa por mi casa, cate de mi corazon",
-        "colonias" : "Colonia 1, Colonia 2, Colonia 3",
-        "imgPath" : "./img/RutaNueva.png"
+        "nombre": "Ruta Nueva",
+        "recorrido": "Agua pasa por mi casa, cate de mi corazon",
+        "colonias": "Colonia 1, Colonia 2, Colonia 3",
+        "imgPath": "./img/RutaNueva.png"
     }
     bear = "Bearer " + token
     data2 = json.dumps(data)
     headers = {"Content-Type": "application/json", "Authorization": bear}
-    response = connection.request(
+    connection.request(
         "POST",
         "/rutas",
         data2,
@@ -137,20 +142,21 @@ def test_PostRuta():
     statusCode = generalResponse.status
     assert HTTPStatus.CREATED == statusCode
 
+
 def test_PatchRuta():
     global token
     global bear
     connection = httpClient.HTTPConnection('127.0.0.1:9090')
     data = {
-        "nombre" : "Ruta Nueva Editada",
-        "recorrido" : "Agua pasa por mi casa, cate de tu corazon",
-        "colonias" : "Colonia 1, Colonia 2, Colonia 3, Colonia 4",
-        "imgPath" : "./img/RutaNuevaEditada.png"
+        "nombre": "Ruta Nueva Editada",
+        "recorrido": "Agua pasa por mi casa, cate de tu corazon",
+        "colonias": "Colonia 1, Colonia 2, Colonia 3, Colonia 4",
+        "imgPath": "./img/RutaNuevaEditada.png"
     }
     bear = "Bearer " + token
     data2 = json.dumps(data)
     headers = {"Content-Type": "application/json", "Authorization": bear}
-    response = connection.request(
+    connection.request(
         "PATCH",
         "/rutas/1",
         data2,
@@ -160,20 +166,21 @@ def test_PatchRuta():
     statusCode = generalResponse.status
     assert HTTPStatus.OK == statusCode
 
+
 def test_DeleteRuta():
     global token
     global bear
     connection = httpClient.HTTPConnection('127.0.0.1:9090')
     data = {
-        "nombre" : "Ruta Nueva Editada",
-        "recorrido" : "Agua pasa por mi casa, cate de tu corazon",
-        "colonias" : "Colonia 1, Colonia 2, Colonia 3, Colonia 4",
-        "imgPath" : "./img/RutaNuevaEditada.png"
+        "nombre": "Ruta Nueva Editada",
+        "recorrido": "Agua pasa por mi casa, cate de tu corazon",
+        "colonias": "Colonia 1, Colonia 2, Colonia 3, Colonia 4",
+        "imgPath": "./img/RutaNuevaEditada.png"
     }
     bear = "Bearer " + token
     data2 = json.dumps(data)
     headers = {"Content-Type": "application/json", "Authorization": bear}
-    response = connection.request(
+    connection.request(
         "DELETE",
         "/rutas/1",
         data2,
@@ -183,23 +190,25 @@ def test_DeleteRuta():
     statusCode = generalResponse.status
     assert HTTPStatus.NO_CONTENT == statusCode
 
+
 def test_GetRutas():
     x = requests.get('http://127.0.0.1:9090/rutas')
     statusCode = x.status_code
     assert HTTPStatus.OK == statusCode
+
 
 def test_Logout():
     global token
     global bear
     connection = httpClient.HTTPConnection('127.0.0.1:9090')
     data = {
-        "username" : "admin1234",
-        "password" : "12345"
+        "username": "admin1234",
+        "password": "12345"
     }
     bear = "Bearer " + token
     data2 = json.dumps(data)
     headers = {"Content-Type": "application/json", "Authorization": bear}
-    response = connection.request(
+    connection.request(
         "POST",
         "/revoke",
         data2,
