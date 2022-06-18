@@ -75,6 +75,7 @@ public class FXMLModificarColoniaController implements Initializable {
             // TODO
             cargarColonias();
         } catch (IOException ex) {
+            mostrarAlerta("No existe conexion con el servidor", "Por el momento no se logro establecer la conexion, intente más tarde", Alert.AlertType.ERROR);
             Logger.getLogger(FXMLConsultaTuRutaController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
@@ -141,28 +142,32 @@ public class FXMLModificarColoniaController implements Initializable {
 
     @FXML
     private void clicGuardar(ActionEvent event) throws IOException, ParseException {
-        Colonia colonia = new Colonia();
-        colonia.setNombre(tfNombre.getText());
-        colonia.setCodigoPostal(parseInt(tfCodigoPostal.getText()));
-        String       patchUrl       = "http://127.0.0.1:9090/colonias/" + idColoniaEdicion;// put in your url
-        Gson         gson          = new Gson();
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPatch     patch          = new HttpPatch(patchUrl);
-        patch.setHeader(HttpHeaders.CONTENT_TYPE,"application/json");
-        patch.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
-        StringEntity postingString = new StringEntity(gson.toJson(colonia));
-        patch.setEntity(postingString);
-        patch.setHeader("Content-type", "application/json");
-        HttpContext responseHandler = null;
-        CloseableHttpResponse response = httpClient.execute(patch);
-        HttpEntity entity = response.getEntity();
-        String str = EntityUtils.toString(entity);
-        if (response.getCode() == 200) {
-            mostrarAlerta("Colonia editada", "La colonia ha sido editada", Alert.AlertType.INFORMATION);
-            cerrarVentana();
-        } else {
-            mostrarAlerta("Error", "No se ha editado la colonia", Alert.AlertType.ERROR);                 
-        }
+        if(tfNombre.getText().isEmpty() || tfCodigoPostal.getText().isEmpty()){
+            mostrarAlerta("Existen campos vacios", "Hay campos vacios necesarios, verificar la información", Alert.AlertType.ERROR);
+        }else{
+            Colonia colonia = new Colonia();
+            colonia.setNombre(tfNombre.getText());
+            colonia.setCodigoPostal(parseInt(tfCodigoPostal.getText()));
+            String       patchUrl       = "http://127.0.0.1:9090/colonias/" + idColoniaEdicion;// put in your url
+            Gson         gson          = new Gson();
+            CloseableHttpClient httpClient = HttpClients.createDefault();
+            HttpPatch     patch          = new HttpPatch(patchUrl);
+            patch.setHeader(HttpHeaders.CONTENT_TYPE,"application/json");
+            patch.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
+            StringEntity postingString = new StringEntity(gson.toJson(colonia));
+            patch.setEntity(postingString);
+            patch.setHeader("Content-type", "application/json");
+            HttpContext responseHandler = null;
+            CloseableHttpResponse response = httpClient.execute(patch);
+            HttpEntity entity = response.getEntity();
+            String str = EntityUtils.toString(entity);
+            if (response.getCode() == 200) {
+                mostrarAlerta("Colonia editada", "La colonia ha sido editada", Alert.AlertType.INFORMATION);
+                cerrarVentana();
+            } else {
+                mostrarAlerta("Error", "No se pudo procesar la solicitud", Alert.AlertType.ERROR);                 
+            }
+            }
     }
     
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {

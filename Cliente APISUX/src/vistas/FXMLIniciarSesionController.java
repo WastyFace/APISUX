@@ -63,38 +63,42 @@ public class FXMLIniciarSesionController implements Initializable {
 
     @FXML
     private void clicIngresar(ActionEvent event) throws IOException, ParseException {
-        User user = new User();
-        user.setUsername(tfUsuario.getText());
-        user.setPassword(pfContrasenia.getText());
-        String       postUrl       = "http://127.0.0.1:9090/token";// put in your url
-        Gson         gson          = new Gson();
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPost     post          = new HttpPost(postUrl);
-        StringEntity postingString = new StringEntity(gson.toJson(user));
-        post.setEntity(postingString);
-        post.setHeader("Content-type", "application/json");
-        HttpContext responseHandler = null;
-        CloseableHttpResponse response = httpClient.execute(post);
-        HttpEntity entity = response.getEntity();
-        String str = EntityUtils.toString(entity);
-        Token token = gson.fromJson(str, Token.class);
-        System.out.println(token.getAccess_token());
-        if (response.getCode() == 200) {
-            try {
-              FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLMenuPrincipalAdmin.fxml"));
-              Parent root = loader.load();
-              FXMLMenuPrincipalAdminController controladorForm = loader.getController();
-              controladorForm.setAccessToken(token.getAccess_token());
-              Scene escenaFormulario = new Scene(root);
-              Stage escenario = new Stage();
-              escenario.setScene(escenaFormulario);
-              escenario.initModality(Modality.APPLICATION_MODAL);
-              escenario.showAndWait();
-          } catch (IOException ex) {
-              Logger.getLogger(FXMLMenuPrincipalAdminController.class.getName()).log(Level.SEVERE, null, ex);
-          }
-        } else {
-            mostrarAlerta("Error", "Usuario y/o contraseña incorrectos", Alert.AlertType.ERROR);                 
+        if(tfUsuario.getText().isEmpty() || pfContrasenia.getText().isEmpty()){
+            mostrarAlerta("Error", "Es necesario escribir tu usuario y contraseña", Alert.AlertType.ERROR);
+        }else{
+            User user = new User();
+            user.setUsername(tfUsuario.getText());
+            user.setPassword(pfContrasenia.getText());
+            String       postUrl       = "http://127.0.0.1:9090/token";// put in your url
+            Gson         gson          = new Gson();
+            CloseableHttpClient httpClient = HttpClients.createDefault();
+            HttpPost     post          = new HttpPost(postUrl);
+            StringEntity postingString = new StringEntity(gson.toJson(user));
+            post.setEntity(postingString);
+            post.setHeader("Content-type", "application/json");
+            HttpContext responseHandler = null;
+            CloseableHttpResponse response = httpClient.execute(post);
+            HttpEntity entity = response.getEntity();
+            String str = EntityUtils.toString(entity);
+            Token token = gson.fromJson(str, Token.class);
+            System.out.println(token.getAccess_token());
+            if (response.getCode() == 200) {
+                try {
+                  FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLMenuPrincipalAdmin.fxml"));
+                  Parent root = loader.load();
+                  FXMLMenuPrincipalAdminController controladorForm = loader.getController();
+                  controladorForm.setAccessToken(token.getAccess_token());
+                  Scene escenaFormulario = new Scene(root);
+                  Stage escenario = new Stage();
+                  escenario.setScene(escenaFormulario);
+                  escenario.initModality(Modality.APPLICATION_MODAL);
+                  escenario.showAndWait();
+              } catch (IOException ex) {
+                  Logger.getLogger(FXMLMenuPrincipalAdminController.class.getName()).log(Level.SEVERE, null, ex);
+              }
+            } else {
+                mostrarAlerta("Error", "Usuario y/o contraseña incorrectos", Alert.AlertType.ERROR);                 
+            }
         }
     }
 

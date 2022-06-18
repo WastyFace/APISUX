@@ -105,6 +105,7 @@ public class FXMLAgregarRutaController implements Initializable {
         try {
             cargarColonias();
         } catch (IOException ex) {
+            mostrarAlerta("No existe conexion con el servidor", "Por el momento no se logro establecer la conexion, intente más tarde", Alert.AlertType.ERROR);
             Logger.getLogger(FXMLAgregarRutaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }    
@@ -156,38 +157,40 @@ public class FXMLAgregarRutaController implements Initializable {
 
     @FXML
     private void clicAgregar(ActionEvent event) throws IOException, ParseException {
-        Ruta ruta = new Ruta();
-        ruta.setNombre(tfNombre.getText());
-        ruta.setRecorrido(taRecorrido.getText());
-        ruta.setColonias(cadenaColonias.toString());
-        ruta.setImgPath("./img/" + ruta.getNombre() + ".png");
-        System.out.println(ruta.getImgPath());
-        String       postUrl       = "http://127.0.0.1:9090/rutas";// put in your url
-        Gson         gson          = new Gson();
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPost     post          = new HttpPost(postUrl);
-        //post.setHeader(HttpHeaders.CONTENT_TYPE, "application/json;charset=UTF-8");
-        post.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
-        post.setHeader("Content-Encoding", "foo-1.0");
-        post.setHeader("Content-Type", "application/json; charset=UTF-8");
-        StringEntity postingString = new StringEntity(gson.toJson(ruta));
-        post.setEntity(postingString);
-        System.out.println(postingString.getContentEncoding());
-        //post.setHeader("Content-type", "application/json;charset=UTF-8");
-        HttpContext responseHandler = null;
-        CloseableHttpResponse response = httpClient.execute(post);
-        response.setHeader(HttpHeaders.CONTENT_TYPE, "application/json;charset=UTF-8");
-        response.setHeader(HttpHeaders.CONTENT_ENCODING, "UTF-8");
-        HttpEntity entity = response.getEntity();
-        String str = EntityUtils.toString(entity);
-        System.out.println("respuesta: " + postingString);
-        if (response.getCode() == 201) {
-            mostrarAlerta("Ruta agregada", "La ruta ha sido agregada", Alert.AlertType.INFORMATION);
-            copiarImagen(ruta);
-        } else if (response.getCode() == 400) {
-            mostrarAlerta("Error", "Nombre ya utilizado", Alert.AlertType.ERROR);                 
-        } else {
-            mostrarAlerta("Error", "No se ha agregado la colonia", Alert.AlertType.ERROR);                 
+        if(tfNombre.getText().isEmpty() || taRecorrido.getText().isEmpty() || cadenaColonias.toString().isEmpty() || selectedFile == null){
+            mostrarAlerta("Existen campos vacios", "Hay campos vacios necesarios, verificar la información", Alert.AlertType.ERROR);
+        }else{
+            Ruta ruta = new Ruta();
+            ruta.setNombre(tfNombre.getText());
+            ruta.setRecorrido(taRecorrido.getText());
+            ruta.setColonias(cadenaColonias.toString());
+            ruta.setImgPath("./img/" + ruta.getNombre() + ".png");
+            String       postUrl       = "http://127.0.0.1:9090/rutas";// put in your url
+            Gson         gson          = new Gson();
+            CloseableHttpClient httpClient = HttpClients.createDefault();
+            HttpPost     post          = new HttpPost(postUrl);
+            post.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
+            post.setHeader("Content-Encoding", "foo-1.0");
+            post.setHeader("Content-Type", "application/json; charset=UTF-8");
+            StringEntity postingString = new StringEntity(gson.toJson(ruta));
+            post.setEntity(postingString);
+            System.out.println(postingString.getContentEncoding());
+            HttpContext responseHandler = null;
+            CloseableHttpResponse response = httpClient.execute(post);
+            response.setHeader(HttpHeaders.CONTENT_TYPE, "application/json;charset=UTF-8");
+            response.setHeader(HttpHeaders.CONTENT_ENCODING, "UTF-8");
+            HttpEntity entity = response.getEntity();
+            String str = EntityUtils.toString(entity);
+            System.out.println("respuesta: " + postingString);
+            if (response.getCode() == 201) {
+                mostrarAlerta("Ruta agregada", "La ruta ha sido agregada", Alert.AlertType.INFORMATION);
+                cerrarVentana();
+                copiarImagen(ruta);
+            } else if (response.getCode() == 400) {
+                mostrarAlerta("Error", "Nombre ya utilizado", Alert.AlertType.ERROR);                 
+            } else {
+                mostrarAlerta("Error", "No se ha agregado la colonia", Alert.AlertType.ERROR);                 
+            }
         }
     }
 
@@ -196,7 +199,6 @@ public class FXMLAgregarRutaController implements Initializable {
         if (!cbColonias.getSelectionModel().isEmpty() && !tvColonias.getItems().contains(cbColonias.getSelectionModel().getSelectedItem())) {
             cadenaColonias.add(cbColonias.getSelectionModel().getSelectedItem().getNombre());
             tvColonias.getItems().add(cbColonias.getSelectionModel().getSelectedItem());
-            System.out.println(cadenaColonias);
         }
     }
 

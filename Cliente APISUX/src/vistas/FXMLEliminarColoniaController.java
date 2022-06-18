@@ -75,6 +75,7 @@ public class FXMLEliminarColoniaController implements Initializable {
             // TODO
             cargarColonias();
         } catch (IOException ex) {
+            mostrarAlerta("No existe conexion con el servidor", "Por el momento no se logro establecer la conexion, intente más tarde", Alert.AlertType.ERROR);
             Logger.getLogger(FXMLConsultaTuRutaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }    
@@ -141,23 +142,23 @@ public class FXMLEliminarColoniaController implements Initializable {
     @FXML
     private void clicEliminar(ActionEvent event) throws IOException, ParseException {
         Optional<ButtonType> respDialogo = muestraDialogoConfirmacion("Eliminar registro", "¿Está seguro de eliminar la colonia " + tfNombre.getText() + "?", Alert.AlertType.CONFIRMATION);
-            if(respDialogo.get() == ButtonType.OK){
-                String       deleteURL       = "http://127.0.0.1:9090/colonias/" + idColoniaEdicion;// put in your url
-                Gson         gson          = new Gson();
-                CloseableHttpClient httpClient = HttpClients.createDefault();
-                HttpDelete     delete          = new HttpDelete(deleteURL);
-                delete.setHeader(HttpHeaders.CONTENT_TYPE,"application/json");
-                delete.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
-                delete.setHeader("Content-type", "application/json");
-                HttpContext responseHandler = null;
-                CloseableHttpResponse response = httpClient.execute(delete);
-                if (response.getCode() == 204) {
-                    mostrarAlerta("Colonia eliminada", "La colonia ha sido eliminada", Alert.AlertType.INFORMATION);
-                    cerrarVentana();
-                } else {
-                    mostrarAlerta("Error", "No se ha eliminado la colonia", Alert.AlertType.ERROR);                 
-                }
+        if(respDialogo.get() == ButtonType.OK){
+            String       deleteURL       = "http://127.0.0.1:9090/colonias/" + idColoniaEdicion;// put in your url
+            Gson         gson          = new Gson();
+            CloseableHttpClient httpClient = HttpClients.createDefault();
+            HttpDelete     delete          = new HttpDelete(deleteURL);
+            delete.setHeader(HttpHeaders.CONTENT_TYPE,"application/json");
+            delete.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
+            delete.setHeader("Content-type", "application/json");
+            HttpContext responseHandler = null;
+            CloseableHttpResponse response = httpClient.execute(delete);
+            if (response.getCode() == 204) {
+                mostrarAlerta("Colonia eliminada", "La colonia ha sido eliminada", Alert.AlertType.INFORMATION);
+                cerrarVentana();
+            } else {
+                mostrarAlerta("Error", "No se pudo procesar la solicitud", Alert.AlertType.ERROR);                 
             }
+        }
     }
     
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {

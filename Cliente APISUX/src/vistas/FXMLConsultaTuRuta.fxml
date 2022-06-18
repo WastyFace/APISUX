@@ -30,13 +30,11 @@
       <Button layoutX="815.0" layoutY="98.0" mnemonicParsing="false" onAction="#clicConsultar" text="Consultar" />
       <ComboBox fx:id="cbColonias" layoutX="157.0" layoutY="98.0" prefHeight="27.0" prefWidth="233.0" />
       <ComboBox fx:id="cbColonias2" layoutX="562.0" layoutY="98.0" prefHeight="27.0" prefWidth="233.0" />
-      <ImageView fx:id="ivImagenRuta" fitHeight="261.0" fitWidth="394.0" layoutX="467.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true" />
-      <TextArea fx:id="taRecorrido" editable="false" layoutX="101.0" layoutY="342.0" prefHeight="123.0" prefWidth="335.0" />
-      <TextArea fx:id="taColonias" editable="false" layoutX="101.0" layoutY="198.0" prefHeight="123.0" prefWidth="335.0" />
-      <Label layoutX="22.0" layoutY="342.0" text="Recorrido:" />
-      <Label layoutX="22.0" layoutY="198.0" text="Colonias:" />
-      <Label layoutX="22.0" layoutY="164.0" text="Ruta:" />
-      <TextField fx:id="tfRuta" editable="false" layoutX="101.0" layoutY="159.0" prefHeight="27.0" prefWidth="335.0" />
       <Button layoutX="441.0" layoutY="478.0" mnemonicParsing="false" onAction="#clicCerrar" text="Cerrar" />
+      <TableView fx:id="tvRutas" layoutX="258.0" layoutY="202.0" prefHeight="200.0" prefWidth="367.0">
+         <columns>
+            <TableColumn fx:id="tcRutas" prefWidth="378.0" text="Rutas" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>

@@ -75,30 +75,35 @@ public class FXMLAgregarColoniaController implements Initializable {
 
     @FXML
     private void clicAgregar(ActionEvent event) throws IOException, ParseException {
-        Colonia colonia = new Colonia();
-        colonia.setNombre(tfNombre.getText());
-        colonia.setCodigoPostal(parseInt(tfCodigoPostal.getText()));
-        String       postUrl       = "http://127.0.0.1:9090/colonias";// put in your url
-        Gson         gson          = new Gson();
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPost     post          = new HttpPost(postUrl);
-        post.setHeader(HttpHeaders.CONTENT_TYPE,"application/json");
-        post.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
-        StringEntity postingString = new StringEntity(gson.toJson(colonia));
-        post.setEntity(postingString);
-        post.setHeader("Content-type", "application/json");
-        HttpContext responseHandler = null;
-        CloseableHttpResponse response = httpClient.execute(post);
-        HttpEntity entity = response.getEntity();
-        String str = EntityUtils.toString(entity);
-        Token token = gson.fromJson(str, Token.class);
-        System.out.println(token.getAccess_token());
-        if (response.getCode() == 201) {
-            mostrarAlerta("Colonia agregada", "La colonia ha sido agregada", Alert.AlertType.INFORMATION);                 
-        } else if (response.getCode() == 400) {
-            mostrarAlerta("Error", "Nombre ya utilizado", Alert.AlertType.ERROR);                 
-        } else {
-            mostrarAlerta("Error", "No se ha agregado la colonia", Alert.AlertType.ERROR);                 
+        if(tfNombre.getText().isEmpty() || tfCodigoPostal.getText().isEmpty()){
+            mostrarAlerta("Existen campos vacios", "Hay campos vacios necesarios, verificar la información", Alert.AlertType.ERROR);
+        }else{
+            Colonia colonia = new Colonia();
+            colonia.setNombre(tfNombre.getText());
+            colonia.setCodigoPostal(parseInt(tfCodigoPostal.getText()));
+            String       postUrl       = "http://127.0.0.1:9090/colonias";// put in your url
+            Gson         gson          = new Gson();
+            CloseableHttpClient httpClient = HttpClients.createDefault();
+            HttpPost     post          = new HttpPost(postUrl);
+            post.setHeader(HttpHeaders.CONTENT_TYPE,"application/json");
+            post.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
+            StringEntity postingString = new StringEntity(gson.toJson(colonia));
+            post.setEntity(postingString);
+            post.setHeader("Content-type", "application/json");
+            HttpContext responseHandler = null;
+            CloseableHttpResponse response = httpClient.execute(post);
+            HttpEntity entity = response.getEntity();
+            String str = EntityUtils.toString(entity);
+            Token token = gson.fromJson(str, Token.class);
+            System.out.println(token.getAccess_token());
+            if (response.getCode() == 201) {
+                mostrarAlerta("Colonia agregada", "La colonia ha sido agregada", Alert.AlertType.INFORMATION);
+                cerrarVentana();
+            } else if (response.getCode() == 400) {
+                mostrarAlerta("Error", "Nombre ya utilizado", Alert.AlertType.ERROR);                 
+            } else {
+                mostrarAlerta("Error", "No se pudo procesar la solicitud", Alert.AlertType.ERROR);                 
+            }
         }
     }
     

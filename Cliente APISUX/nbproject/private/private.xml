@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/carlosperezperez/Library/CloudStorage/OneDrive-UniversidadVeracruzana/UV/Sexto%20Periodo/Desarrollo%20de%20Sistemas%20en%20Red/Proyecto/Cliente%20APISUX/src/vistas/FXMLAgregarColoniaController.java</file>
-            <file>file:/Users/carlosperezperez/Library/CloudStorage/OneDrive-UniversidadVeracruzana/UV/Sexto%20Periodo/Desarrollo%20de%20Sistemas%20en%20Red/Proyecto/Cliente%20APISUX/src/vistas/FXMLEliminarRutaController.java</file>
-            <file>file:/Users/carlosperezperez/Library/CloudStorage/OneDrive-UniversidadVeracruzana/UV/Sexto%20Periodo/Desarrollo%20de%20Sistemas%20en%20Red/Proyecto/Cliente%20APISUX/src/vistas/FXMLAgregarRutaController.java</file>
+            <file>file:/Users/carlosperezperez/Library/CloudStorage/OneDrive-UniversidadVeracruzana/UV/Sexto%20Periodo/Desarrollo%20de%20Sistemas%20en%20Red/Proyecto/Cliente%20APISUX/src/vistas/FXMLModificarRutaController.java</file>
+            <file>file:/Users/carlosperezperez/Library/CloudStorage/OneDrive-UniversidadVeracruzana/UV/Sexto%20Periodo/Desarrollo%20de%20Sistemas%20en%20Red/Proyecto/Cliente%20APISUX/src/vistas/FXMLMenuPrincipalController.java</file>
+            <file>file:/Users/carlosperezperez/Library/CloudStorage/OneDrive-UniversidadVeracruzana/UV/Sexto%20Periodo/Desarrollo%20de%20Sistemas%20en%20Red/Proyecto/Cliente%20APISUX/src/vistas/FXMLRutasController.java</file>
+            <file>file:/Users/carlosperezperez/Library/CloudStorage/OneDrive-UniversidadVeracruzana/UV/Sexto%20Periodo/Desarrollo%20de%20Sistemas%20en%20Red/Proyecto/Cliente%20APISUX/src/vistas/FXMLRutasColoniaController.java</file>
         </group>
     </open-files>
 </project-private>

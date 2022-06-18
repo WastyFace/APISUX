@@ -18,11 +18,14 @@
          </font>
       </Label>
       <ComboBox fx:id="cbRutas" layoutX="265.0" layoutY="94.0" prefHeight="27.0" prefWidth="376.0" />
-      <Label layoutX="14.0" layoutY="193.0" text="Colonias:" />
       <Label layoutX="14.0" layoutY="337.0" text="Recorrido:" />
-      <TextArea fx:id="taColonias" editable="false" layoutX="93.0" layoutY="193.0" prefHeight="123.0" prefWidth="335.0" />
       <TextArea fx:id="taRecorrido" editable="false" layoutX="93.0" layoutY="337.0" prefHeight="123.0" prefWidth="335.0" />
       <Button layoutX="426.0" layoutY="478.0" mnemonicParsing="false" onAction="#clicCerrar" text="Cerrar" />
       <ImageView fx:id="ivImagenRuta" fitHeight="261.0" fitWidth="394.0" layoutX="459.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true" />
+      <TableView fx:id="tvColonias" layoutX="93.0" layoutY="152.0" prefHeight="172.0" prefWidth="335.0">
+         <columns>
+            <TableColumn fx:id="tvRutas" prefWidth="334.0" text="Colonias" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>

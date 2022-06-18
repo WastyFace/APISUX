@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -29,9 +30,10 @@
       <Button layoutX="258.0" layoutY="197.0" mnemonicParsing="false" onAction="#clicAgregarColonia" text="Agregar colonia" />
       <Label layoutX="518.0" layoutY="149.0" text="Recorrido:" />
       <TextArea fx:id="taRecorrido" layoutX="631.0" layoutY="149.0" prefHeight="200.0" prefWidth="249.0" />
-      <Button layoutX="572.0" layoutY="397.0" mnemonicParsing="false" onAction="#clicSeleccionarImagen" text="Seleccionar imagen ruta" />
+      <Button layoutX="500.0" layoutY="363.0" mnemonicParsing="false" onAction="#clicSeleccionarImagen" text="Seleccionar imagen ruta" />
       <Button layoutX="370.0" layoutY="197.0" mnemonicParsing="false" onAction="#clicEliminarColonia" text="Eliminar colonia" />
       <Label layoutX="274.0" layoutY="96.0" text="Ruta:" />
       <ComboBox fx:id="cbRutas" layoutX="350.0" layoutY="91.0" prefHeight="27.0" prefWidth="269.0" />
+      <ImageView fx:id="ivRuta" fitHeight="120.0" fitWidth="149.0" layoutX="681.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

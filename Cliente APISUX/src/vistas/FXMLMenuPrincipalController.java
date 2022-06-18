@@ -82,9 +82,6 @@ public class FXMLMenuPrincipalController implements Initializable {
         }
     }
 
-    @FXML
-    private void clicViajaSegura(ActionEvent event) {
-    }
 
     @FXML
     private void clicIniciarSesion(ActionEvent event) {

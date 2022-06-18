@@ -16,19 +16,15 @@
             <Font size="39.0" />
          </font>
       </Label>
-      <Button layoutX="35.0" layoutY="236.0" mnemonicParsing="false" onAction="#clicRutas" prefHeight="82.0" prefWidth="184.0" text="Rutas">
+      <Button layoutX="147.0" layoutY="238.0" mnemonicParsing="false" onAction="#clicRutas" prefHeight="82.0" prefWidth="184.0" text="Rutas">
          <font>
             <Font size="19.0" />
          </font></Button>
-      <Button layoutX="242.0" layoutY="236.0" mnemonicParsing="false" onAction="#clicRutasColonia" prefHeight="82.0" prefWidth="184.0" text="Rutas por colonia">
+      <Button layoutX="354.0" layoutY="238.0" mnemonicParsing="false" onAction="#clicRutasColonia" prefHeight="82.0" prefWidth="184.0" text="Rutas por colonia">
          <font>
             <Font size="19.0" />
          </font></Button>
-      <Button layoutX="463.0" layoutY="236.0" mnemonicParsing="false" onAction="#clicConsultaTuRuta" prefHeight="82.0" prefWidth="184.0" text="Consulta tu ruta">
-         <font>
-            <Font size="19.0" />
-         </font></Button>
-      <Button layoutX="670.0" layoutY="236.0" mnemonicParsing="false" onAction="#clicViajaSegura" prefHeight="82.0" prefWidth="201.0" text="Viaja segura">
+      <Button layoutX="564.0" layoutY="238.0" mnemonicParsing="false" onAction="#clicConsultaTuRuta" prefHeight="82.0" prefWidth="184.0" text="Consulta tu ruta">
          <font>
             <Font size="19.0" />
          </font></Button>
